@@ -1,0 +1,23 @@
+<%- include("header") -%>
+
+<h4 class="dateHeading"><%= currentDate %></h4>
+<header class="box" id="heading">
+    <h1><%= listTitle %></h1>
+</header>
+
+<section class="box">
+    <% for(var i=0; i<newListItems.length; i++) { %>
+    <section class="item">
+        <input type="checkbox">
+        <p><%= newListItems[i] %></p>
+    </section>
+    <% } %>
+
+    <form action="/" method="post" class="item">
+        <input type="text" name="listItem" placeholder="What do you want to do today?" autocomplete="off">
+        <button type="submit" name="list" value="<%= listTitle %>">+</button>
+    </form>
+
+</section>
+
+<%- include("footer") -%>
